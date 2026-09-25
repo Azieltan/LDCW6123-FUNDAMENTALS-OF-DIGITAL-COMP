@@ -1,0 +1,3 @@
+* af73f2b Handle invalid and ended input; add five scenario checks
+* 0270ef4 Implement menu inputs and fictional film catalogue
+* eddae02 Document scope and learning goals for the movie assistant
