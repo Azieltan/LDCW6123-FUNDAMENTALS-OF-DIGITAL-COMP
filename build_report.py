@@ -45,7 +45,7 @@ def poster():
  y=H-365; gap=12;cw=(W-86-4*gap)/5
  cards=[
  ('1998','ENTRY','Online DVD rental begins; customers order from home. No store visit is required [3].'),
- ('2000s','FOOTHOLD','Mail and the internet extend access beyond convenient store locations; immediate viewing remains weaker [1].'),
+ ('EARLY','FOOTHOLD','Mail and the internet extend access beyond convenient store locations; immediate viewing remains weaker [1].'),
  ('2002','IMPROVEMENT','Regional distribution and CineMatch help access and discovery; the subscription gains scale [4, 5].'),
  ('2007','UPMARKET','Streaming adds immediate online viewing. This is a later improvement to Netflix, not its original foothold [6].'),
  ('2010-23','MARKET SHIFT','Blockbuster enters bankruptcy in 2010; Netflix ends its DVD service in 2023 [1, 7].')]
