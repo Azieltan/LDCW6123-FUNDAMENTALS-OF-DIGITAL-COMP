@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <limits>
 #include <string>
@@ -38,7 +39,10 @@ int readChoice(const std::string& prompt, int minimum, int maximum) {
         std::cout << "Please enter a number from " << minimum << " to " << maximum << ".\n";
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        if (std::cin.eof()) return minimum; // Allows clean termination in piped demos.
+        if (std::cin.eof()) {
+            std::cout << "Input ended. Goodbye.\n";
+            std::exit(0);
+        }
     }
 }
 
