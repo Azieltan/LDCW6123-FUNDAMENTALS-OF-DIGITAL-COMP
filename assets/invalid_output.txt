@@ -3,17 +3,10 @@ A small rule-based demonstration inspired by online movie discovery.
 The titles below are fictional; no account or internet is needed.
 
 Genre: 1 Sci-Fi  2 Comedy  3 Drama
-Choose genre (1-3): 2
-Mood: 1 Relaxed  2 Exciting  3 Thoughtful
-Choose mood (1-3): 1
-Length: 1 Up to 100 min  2 Over 100 min: 2
-
-Recommendation: Coffee and Clouds (118 min)
-Old friends meet again in a tiny hillside cafe.
-Why: It matches your Comedy choice, Relaxed mood, and length preference.
-Find another? 1 Yes  2 No: 1
-
-Genre: 1 Sci-Fi  2 Comedy  3 Drama
+Choose genre (1-3): 1abc
+Please enter a whole number from 1 to 3.
+Choose genre (1-3): 1.5
+Please enter a whole number from 1 to 3.
 Choose genre (1-3): 1
 Mood: 1 Relaxed  2 Exciting  3 Thoughtful
 Choose mood (1-3): 3

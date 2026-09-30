@@ -64,4 +64,10 @@ git bundle create development_history.bundle --all
 - `SUBMISSION_CHECKLIST.md`: outstanding personal and upload actions.
 - `tools/`: reproducible document and evidence builders, when included.
 
+## Edit the report
+
+Edit `docs/LDCW6123_Netflix_Project.docx` to complete the class section, declarations and access links. Export the updated document to PDF and review every page and the contents page numbers. Keep the poster page in A3 landscape orientation.
+
+The Python builders require python-docx, Pillow, reportlab and pypdf; the evidence builder also needs a POSIX terminal and a compiled `build/movie_assistant`. `tools/build_documents.py` regenerates the documents from `docs/submission_details.json` and the content in `tools/content_data.py`. It overwrites generated files, so preserve any manual Word edits before running it. After rendering and checking the DOCX, `python tools/finalize_report.py /absolute/path/rendered-report.pdf` replaces the poster page with its vector original. This helper expects the reviewed 20-page layout; re-check pagination after adding declarations or attachments.
+
 The final PDF must contain a working OneDrive video link and a working source-code/Git-history link. Signatures, declarations of personal contribution, recording and Turnitin reports must be supplied by the group. See the checklist before submission.

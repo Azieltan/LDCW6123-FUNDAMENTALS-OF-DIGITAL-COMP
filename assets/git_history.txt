@@ -1,3 +1,8 @@
+* ff2cf6b Document verified Netflix lifecycle model and six-member submission materials
+* 27ea971 Validate complete menu lines and verify recommendation and recovery scenarios
+* a4ee86f Clarify foothold stage and add presentation guidance and disclosure
+* 41caafc Lay out A3 poster and report with readable code capture
+* f31ad38 Capture actual program run and local development history
 * af73f2b Handle invalid and ended input; add five scenario checks
 * 0270ef4 Implement menu inputs and fictional film catalogue
 * eddae02 Document scope and learning goals for the movie assistant
