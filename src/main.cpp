@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include <limits>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -28,21 +28,24 @@ const std::vector<Movie> catalogue = {
     {"Night Shift", "Drama", "Exciting", 109, "A hospital worker faces a difficult overnight choice."}
 };
 
+// Read the whole line so entries such as 1abc and 1.5 are rejected.
 int readChoice(const std::string& prompt, int minimum, int maximum) {
     while (true) {
         std::cout << prompt;
-        int choice;
-        if (std::cin >> choice && choice >= minimum && choice <= maximum) {
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            return choice;
-        }
-        std::cout << "Please enter a number from " << minimum << " to " << maximum << ".\n";
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        if (std::cin.eof()) {
-            std::cout << "Input ended. Goodbye.\n";
+        std::string line;
+        if (!std::getline(std::cin, line)) {
+            std::cout << "\nInput ended. Goodbye.\n";
             std::exit(0);
         }
+        std::istringstream input(line);
+        int choice = 0;
+        char extra = '\0';
+        if (input >> choice && !(input >> extra)
+            && choice >= minimum && choice <= maximum) {
+            return choice;
+        }
+        std::cout << "Please enter a whole number from " << minimum
+                  << " to " << maximum << ".\n";
     }
 }
 
@@ -59,6 +62,7 @@ int main() {
         int length = readChoice("Length: 1 Up to 100 min  2 Over 100 min: ", 1, 2);
         const std::string genres[] = {"Sci-Fi", "Comedy", "Drama"};
         const std::string moods[] = {"Relaxed", "Exciting", "Thoughtful"};
+        // Genre is required; mood has priority over duration.
         int bestScore = -1;
         const Movie* best = nullptr;
         for (const Movie& movie : catalogue) {
@@ -66,12 +70,19 @@ int main() {
             int score = 0;
             if (movie.mood == moods[mood - 1]) score += 2;
             if ((movie.minutes <= 100) == (length == 1)) score += 1;
+            // Equal scores keep the first title in catalogue order.
             if (score > bestScore) {
                 best = &movie;
                 bestScore = score;
             }
         }
-        // The selected genre always contains titles, even when other preferences conflict.
+        // Protect the output if a genre is removed from a future catalogue.
+        if (best == nullptr) {
+            std::cout << "No titles are available in this genre.\n";
+            again = readChoice("Find another? 1 Yes  2 No: ", 1, 2) == 1;
+            continue;
+        }
+        // Explain only preferences actually matched by the recommendation.
         std::cout << "\nRecommendation: " << best->title << " (" << best->minutes << " min)\n"
                   << best->description << "\n"
                   << "Why: It matches your " << genres[genre - 1] << " choice";
