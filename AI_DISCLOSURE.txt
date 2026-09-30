@@ -1,1 +1,9 @@
-This draft poster, analysis, C++ program, report layout, test script and presentation guide were created with assistance from OpenAI ChatGPT (Codex) on 25 September 2026. The included Git commits use the author 'Codex draft' and document this preparation only. No student contributions, signatures or presentation recording are asserted. Group members must independently verify sources, add their own work, complete declarations and follow the LDCW6123 policy on AI-generated content.
+Generative AI assistance disclosure
+
+OpenAI ChatGPT (Codex) assisted with the initial poster, analysis, C++ programme, report, tests and presentation guidance on 25 September 2026. On 30 September 2026, Codex assisted with source verification, APA formatting, model mapping, input-validation repair, expanded testing, evidence capture, document formatting and a complete six-person presentation script.
+
+The original Git author is 'Codex draft'; revision commits use 'Codex assisted revision'. These commits document actual AI-assisted preparation and revision. They do not demonstrate that named students authored those changes.
+
+The group members' names, student IDs, programme, lecturer and Group 13 designation were transcribed from the supplied LDCW6123 Assignment 2 coversheet. Previous signatures, dates and contributions were not reused for this project. No student contribution, new signature, completed recording or Turnitin result is asserted.
+
+Each group member must review and understand the submission, record their genuine contributions, and complete their declaration personally. This disclosure does not establish compliance with the course's AI-content rules. The institution's requirements and any limits must still be followed.
