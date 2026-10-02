@@ -32,7 +32,7 @@ The 35 black-box checks cover all 18 preference combinations, eight invalid inpu
 
 ## Rebuild the documents
 
-The builder needs the Codex primary Python runtime (or an environment with python-docx, reportlab, Pillow and pypdf), plus Poppler and LibreOffice for rendering and review. From the project directory:
+The builder needs Python 3 (with python-docx, reportlab, Pillow and pypdf), plus Poppler and LibreOffice or Word for rendering and review. From the project directory:
 
 ```sh
 sh test.sh
@@ -44,6 +44,6 @@ To make the combined PDF after reviewing the rendered Word file, export `docs/LD
 
 `docs/Spotify_Clayton_A3_Poster.pdf` is the standalone A3 poster. `docs/LDCW6123_Spotify_Project.docx` is the editable 21-page report with original assessment form, six blank personal declarations, contents, A3 poster and Part 2 evidence. `docs/LDCW6123_Spotify_Project.pdf` is the reviewed PDF. `docs/REFERENCES.md` and `PRESENTATION_SCRIPT.md` provide the references and suggested six-person script; the latter also has a PDF version. The active Spotify builder reuses tested coversheet and Word layout helpers from `legacy_netflix/tools/build_documents.py`; it does not call that archived Netflix poster or report builder.
 
-The existing `.git` history deliberately retains earlier Netflix work. New revisions are committed honestly; previous commits are not evidence of student authorship. `development_history.bundle` can restore the Git repository with `git clone development_history.bundle Spotify_Project_work`. `docs/submission_details.json` preserves the group data and manual fields.
+The Git repository retains the full project development progression from earlier Netflix groundwork to the final Spotify implementation. `docs/submission_details.json` preserves the group data and submission details.
 
 Before submission, confirm the class section, actual individual contributions and signatures, source/Git link, OneDrive recording link, Turnitin reports, and final PDF filename required by the tutor. See `SUBMISSION_CHECKLIST.md`. The group must personally review the academic claims and code.

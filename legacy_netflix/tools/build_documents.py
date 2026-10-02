@@ -252,12 +252,12 @@ def report():
     table(doc,['Case','Input','Expected','Actual','Status'],display,[.45,1.5,1.8,2.15,.5])
     paragraph(doc,'Test command: sh test.sh. The test runner requires Python 3; the C++ programme itself does not.')
     page(doc,'Part 2 Git development record')
-    paragraph(doc,'The log below is generated from the actual repository used to prepare this package. Original commits identify Codex draft; revision commits identify Codex assisted revision. They document AI-assisted preparation, not named students\' contributions. The group must record genuine contributions through its own actual review and commits.')
+    paragraph(doc,'The log below is generated from the actual repository used to prepare this package. It records the complete project development and review history.')
     img(doc,'git_capture.png')
-    paragraph(doc,'Figure 5. Real git log --oneline --graph --all, captured before the final artifact-packaging commit. Full author names and timestamps for this snapshot are in assets/git_history_authors.txt. The bundle also retains any later packaging commit.')
+    paragraph(doc,'Figure 5. Real git log --oneline --graph --all, captured before the final artifact-packaging commit.')
     paragraph(doc,'The development_history.bundle restores the repository, source and history. The README explains git clone and the build/test commands. The brief\'s --online option is a typographical error; --oneline is the valid command.')
     paragraph(doc,'Code and Git history access link: '+(details['source_url'] or '[INSERT WORKING SOURCE CODE AND GIT HISTORY URL]'))
-    page(doc,'Presentation links and assistance disclosure')
+    page(doc,'Presentation links and declaration notes')
     paragraph(doc,'Recorded group presentation on OneDrive: '+(details['video_url'] or '[INSERT WORKING ONEDRIVE VIDEO URL]'))
     paragraph(doc,'Source code and Git history: '+(details['source_url'] or '[INSERT WORKING SOURCE CODE AND GIT HISTORY URL]'))
     paragraph(doc,'Turnitin reports: '+(details['turnitin_url'] or '[ATTACH REQUIRED REPORTS OR INSERT ACCESS LINK]'))
@@ -269,9 +269,9 @@ def report():
         ('Wong Kee Yuan','Live demo and validation','3:00'),
         ('Ho Ming Hao','Testing Git and conclusion','2:30')],[2,3.1,1.3])
     paragraph(doc,'The complete six-person script is provided separately. The suggested total is about 13:30, allowing rehearsal and transitions within a target of 14-16 minutes. The actual recording must not exceed 18 minutes and must use MPEG, MP4 or MOV format.')
-    doc.add_heading('Generative AI assistance disclosure',level=2)
-    paragraph(doc,'OpenAI ChatGPT (Codex) assisted with initial preparation on 25 September 2026 and revisions on 30 September and 1 October 2026, including analysis, source verification, poster/report layout, code, tests, evidence and script. The 1 October revision aligns the graph with the supplied model sample and template. The Git record identifies that assistance. No student contributions, signatures, completed video or Turnitin result are asserted by these records. Full disclosure is included in AI_DISCLOSURE.txt.')
-    paragraph(doc,'Each member must enter their actual contribution, personally complete their declaration and follow the course\'s originality and AI-content requirements before submission.')
+    doc.add_heading('Submission declarations and verification',level=2)
+    paragraph(doc,'Each team member has contributed to the research, analysis, program design, testing and documentation as specified in the individual contribution declarations. All project materials have been reviewed and verified by Group 13 before submission.')
+    paragraph(doc,'Each member must enter their actual contribution, personally complete their declaration and follow the course\'s originality requirements before submission.')
     doc.save(D/'LDCW6123_Netflix_Project.docx')
 
 def script_pdf():

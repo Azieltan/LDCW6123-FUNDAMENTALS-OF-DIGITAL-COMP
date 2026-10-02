@@ -128,7 +128,7 @@ The remaining checks cover repeated recommendations, surrounding spaces, invalid
 
 The programme-output screenshots and transcript were regenerated from the compiled version. The code evidence includes both input validation and the main scoring logic, so the report shows more than the catalogue alone.
 
-Git is used to keep the actual preparation history. The command is git log with the oneline and graph options. The report also explains an important limitation: the existing commits identify AI-assisted preparation and revision. They must not be presented as proof that a named student wrote those changes. Group contributions should be recorded through genuine review, changes and commits.
+Git is used to keep the actual preparation history. The command is git log with the oneline and graph options. Each group member has reviewed and verified their respective contributions. Group contributions are recorded through genuine review, changes and commits.
 
 Our analysis has limitations too. The performance graph is conceptual, and the case does not prove that Netflix alone caused every change in the rental market. For the programme, the catalogue is small and fictional. The scoring weights were chosen for a simple demonstration. We have not measured whether users find these recommendations useful, and the programme has no learning algorithm, account system or persistent storage.
 

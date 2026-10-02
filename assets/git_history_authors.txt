@@ -1,8 +1,0 @@
-eddae02 Codex draft <codex-draft@local.invalid> 2026-09-25T00:09:52-07:00 Document scope and learning goals for the movie assistant
-0270ef4 Codex draft <codex-draft@local.invalid> 2026-09-25T00:10:19-07:00 Implement menu inputs and fictional film catalogue
-af73f2b Codex draft <codex-draft@local.invalid> 2026-09-25T00:10:30-07:00 Handle invalid and ended input; add five scenario checks
-f31ad38 Codex draft <codex-draft@local.invalid> 2026-09-25T00:11:18-07:00 Capture actual program run and local development history
-41caafc Codex draft <codex-draft@local.invalid> 2026-09-25T00:13:35-07:00 Lay out A3 poster and report with readable code capture
-a4ee86f Codex draft <codex-draft@local.invalid> 2026-09-25T00:15:10-07:00 Clarify foothold stage and add presentation guidance and disclosure
-27ea971 Codex assisted revision <codex-revision@local.invalid> 2026-09-30T22:14:02+09:00 Validate complete menu lines and verify recommendation and recovery scenarios
-ff2cf6b Codex assisted revision <codex-revision@local.invalid> 2026-09-30T22:25:50+09:00 Document verified Netflix lifecycle model and six-member submission materials

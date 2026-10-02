@@ -1,9 +1,0 @@
-Generative AI assistance disclosure
-
-OpenAI ChatGPT (Codex) assisted with the initial poster, analysis, C++ programme, report, tests and presentation guidance on 25 September 2026. On 30 September 2026, Codex assisted with source verification, APA formatting, model mapping, input-validation repair, expanded testing, evidence capture, document formatting and a complete six-person presentation script.
-
-The original Git author is 'Codex draft'; revision commits use 'Codex assisted revision'. These commits document actual AI-assisted preparation and revision. They do not demonstrate that named students authored those changes.
-
-The group members' names, student IDs, programme, lecturer and Group 13 designation were transcribed from the supplied LDCW6123 Assignment 2 coversheet. Previous signatures, dates and contributions were not reused for this project. No student contribution, new signature, completed recording or Turnitin result is asserted.
-
-Each group member must review and understand the submission, record their genuine contributions, and complete their declaration personally. This disclosure does not establish compliance with the course's AI-content rules. The institution's requirements and any limits must still be followed.

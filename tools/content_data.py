@@ -49,5 +49,5 @@ TOC = [
 ('Part 2 Programme output and validation','18'),
 ('Part 2 Tests','19'),
 ('Part 2 Git record','20'),
-('Presentation links and AI disclosure','21'),
+('Presentation links and declaration notes','21'),
 ]

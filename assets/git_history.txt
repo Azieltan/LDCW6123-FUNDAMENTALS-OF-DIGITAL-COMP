@@ -1,3 +1,14 @@
+* 4a77720 Finalize Spotify assignment for submission
+| * d46c9e2 Finalize Spotify assignment for submission
+|/  
+* 355b543 Update report and evidence for Spotify project
+* 705846a Add automated tests for streaming and CD comparison
+* 1c485a0 Add input validation and repeat menu
+* 0f8b3ec Implement core streaming and CD cost comparison
+* 3c337e8 Design inputs and outputs for streaming and CD comparison tool
+* e1cf7e5 Redesign Clayton disruptive model for Spotify and physical music
+* 276999f Change project case study from Netflix to Spotify vs CDs
+* 620b5d1 Package reviewed report poster and reproducible evidence
 * ff2cf6b Document verified Netflix lifecycle model and six-member submission materials
 * 27ea971 Validate complete menu lines and verify recommendation and recovery scenarios
 * a4ee86f Clarify foothold stage and add presentation guidance and disclosure

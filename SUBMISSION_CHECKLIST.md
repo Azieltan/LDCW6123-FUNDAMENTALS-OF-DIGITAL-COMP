@@ -1,33 +1,12 @@
-# Group 13 Submission Checklist
+# Group 13 submission actions
 
-Deadline: **2 October 2026 (Friday), 11:59 PM, Malaysia time**. Submission by Aziel, the group leader.
+The assignment deadline in the supplied brief is **2 October 2026 at 11:59 PM Malaysia time**. The group leader makes the submission using the tutor's procedure. The report filename must follow `Ldcw6123_project_section_leadername (student id).pdf` once the correct section is confirmed.
 
-Completed content: revised model analysis; A3 poster with conceptual performance trajectories and references; repaired C++17 programme; 35 passing tests; full source and readable evidence; real AI-assisted Git history; complete six-person presentation script; official coversheet and six named member declarations.
-
-The following actions still require the group:
-
-- Confirm the class section. It was not stated in the supplied Assignment 2 coversheet.
-- Each person must write the tasks they actually performed in their declaration. Do not copy their previous cybersecurity-assignment contributions.
-- Each person must personally review the academic-integrity statements and complete the relevant checkboxes, signature and date. The leader also signs the coversheet.
-- Add genuine reviewed contributions to the project and commit real changes. The supplied AI-assisted commits must not be represented as student contributions.
-- Rehearse and record the presentation in MP4, MOV or MPEG. Keep the total duration at or below 18 minutes. The script targets about 14-16 minutes including demonstrations; actual duration depends on delivery.
-- Upload the real recording to OneDrive. Insert its URL in the report, and verify lecturer access.
-- Upload the source code and Git history to a repository or shared folder. Insert the URL in the report and verify access. A Git bundle alone is not the required accessible link.
-- Obtain and submit the Turnitin reports required by the coversheet. No result or similarity percentage has been fabricated.
-- Follow the course's AI-content rules and include an accurate assistance disclosure.
-- After completing the editable DOCX, export it to PDF and check the contents page numbers, poster readability and URLs.
-- Name the final report `Ldcw6123_project_SECTION_Aziel (261UC240LY).pdf`, replacing `SECTION` with the confirmed class section.
-- The report should include the coversheet, six declarations, contents, Part 1 poster and references, Part 2 source/output/Git evidence, source/Git link and OneDrive presentation link. Do not attach marking rubrics to the final report.
-
-Suggested review responsibilities, to accept or change before doing the work:
-
-| Member | Proposed review or recording responsibility |
-|---|---|
-| Aziel Tan Zheng Chuan | Coordinate the submission, confirm requirements and introduce the case |
-| See Wing Kit | Review model definitions and explain the customer/performance mapping |
-| Soo Kian Rong | Verify historical milestones and references |
-| Vincent Lock Chun Kit | Review the C++ structures and scoring logic |
-| Wong Kee Yuan | Check input validation and perform the live demo |
-| Ho Ming Hao | Reproduce tests, review Git evidence and present limitations |
-
-These are proposed future responsibilities, not a record of completed contributions.
+- [ ] Confirm that all six members are in the same class section; replace `[CONFIRM CLASS SECTION]` in `docs/submission_details.json`, then rebuild and recheck the report.
+- [ ] Each member writes only their own true contributions on their blank declaration, signs and dates it; group leader completes the leader declaration and academic-integrity ticks.
+- [ ] Review the graph, evidence, claims, citations and C++ code as a group. Correct any statement the group cannot defend. The Spotify/CD case is an interpretation of Clayton, not a proven exclusive cause of physical-music decline.
+- [ ] Record an MPEG, MP4 or MOV group presentation under 18 minutes. The script is a suggested speaking plan, not a completed recording. Add a working OneDrive URL to `docs/submission_details.json`.
+- [ ] Upload the source and authentic Git log/bundle to an accessible location; add its working URL to `docs/submission_details.json`.
+- [ ] Obtain the required Turnitin reports and add their actual link or attachment. Do not assert a fabricated similarity score.
+- [ ] Rebuild the documents after details change, render and inspect every PDF page, update page numbers if pagination changes, and name the final PDF with the verified section and leader details.
+- [ ] Submit the final report PDF, video link and required source/evidence by the deadline.

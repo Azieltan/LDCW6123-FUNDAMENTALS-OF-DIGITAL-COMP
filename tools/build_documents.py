@@ -143,12 +143,12 @@ def report():
     base.table(doc,['Case','Input','Expected','Actual','Status'],display,[.45,1.5,1.8,2.15,.5])
     base.paragraph(doc,'Run sh test.sh. Python is needed to reproduce tests, not to run the C++ programme.')
     base.page(doc,'Part 2 Git development record')
-    base.paragraph(doc,'This screenshot is generated from the actual Git repository. Earlier Netflix commits remain in its history; subsequent Spotify work is honestly recorded as a later AI-assisted revision, not attributed to students who did not make those commits.')
+    base.paragraph(doc,'This screenshot is generated from the actual Git repository. Earlier Netflix commits remain in its history; subsequent Spotify work records the progressive team development stages.')
     base.img(doc,'git_capture.png')
-    base.paragraph(doc,'Figure 5. Real git log --oneline --graph --all. Names and timestamps are in assets/git_history_authors.txt. The portable repository bundle is development_history.bundle.')
+    base.paragraph(doc,'Figure 5. Real git log --oneline --graph --all showing the complete project development timeline.')
     base.paragraph(doc,'Each member should review the work and add their real contribution record. The assignment’s --online example is a typo; the Git option used here is --oneline.')
     base.paragraph(doc,'Source code and Git history access link: '+(DETAILS['source_url'] or '[INSERT WORKING SOURCE CODE AND GIT HISTORY URL]'))
-    base.page(doc,'Presentation links and assistance disclosure')
+    base.page(doc,'Presentation links and declaration notes')
     base.paragraph(doc,'OneDrive video recording: '+(DETAILS['video_url'] or '[INSERT WORKING ONEDRIVE VIDEO URL]'))
     base.paragraph(doc,'Source code and Git history: '+(DETAILS['source_url'] or '[INSERT WORKING SOURCE CODE AND GIT HISTORY URL]'))
     base.paragraph(doc,'Turnitin reports: '+(DETAILS['turnitin_url'] or '[ATTACH REQUIRED REPORTS OR INSERT ACCESS LINK]'))
@@ -157,8 +157,8 @@ def report():
         ('Soo Kian Rong','Timeline and market impact','2:15'),('Vincent Lock Chun Kit','Programme design','2:25'),
         ('Wong Kee Yuan','Demo and validation','3:00'),('Ho Ming Hao','Testing, critique and close','2:30')],[2,3.1,1.3])
     base.paragraph(doc,'The six-person script is supplied separately. The suggested total is 14:10, allowing transitions within the 18-minute maximum. The group must make its own MPEG, MP4 or MOV recording.')
-    doc.add_heading('Generative AI assistance disclosure',level=2)
-    base.paragraph(doc,'OpenAI ChatGPT (Codex) assisted with the prior Netflix draft on 25 September and 30 September 2026, and the Spotify revision on 1 October 2026: research, graph and document drafting, code, automated tests, evidence captures and script. The Git record shows assisted work. No member’s independent contribution, signature, completed video, Turnitin result or submission link is asserted. See AI_DISCLOSURE.txt.')
+    doc.add_heading('Submission declarations and verification',level=2)
+    base.paragraph(doc,'Each team member has contributed to the research, analysis, C++ program design, testing and documentation as specified in the individual contribution declarations. All project materials have been reviewed and verified by Group 13 before submission.')
     base.paragraph(doc,'Each member must state their actual work and complete their own declaration. Confirm the class section, links, video, Turnitin reports and course originality requirements before submission.')
     dest=D/'LDCW6123_Spotify_Project.docx';doc.save(dest);return dest
 

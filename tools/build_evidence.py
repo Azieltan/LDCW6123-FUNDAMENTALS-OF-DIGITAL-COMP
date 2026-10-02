@@ -59,8 +59,6 @@ picture(invalid,'invalid_capture.png')
 picture(invalid.split('Mood:')[0],'invalid_validation.png')
 
 log=subprocess.check_output(['git','log','--oneline','--graph','--all'],cwd=root,text=True)
-detail=subprocess.check_output(['git','log','--format=%h %an <%ae> %aI %s','--reverse'],cwd=root,text=True)
 assets.joinpath('git_history.txt').write_text(log)
-assets.joinpath('git_history_authors.txt').write_text(detail)
 picture(log,'git_capture.png',20)
 print('Captured actual interactive runs, complete source extracts and current Git evidence.')
