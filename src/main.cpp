@@ -1,95 +1,53 @@
 #include <cstdlib>
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 
-struct Movie {
+struct Track {
     std::string title;
+    std::string artist;
     std::string genre;
     std::string mood;
     int minutes;
     std::string description;
 };
 
-// Fictional titles keep the demonstration self-contained and easy to review.
-const std::vector<Movie> catalogue = {
-    {"Orbit Station", "Sci-Fi", "Thoughtful", 96, "A crew solves a mystery aboard a research station."},
-    {"Tomorrow's Signal", "Sci-Fi", "Exciting", 114, "A radio message sends friends on a time-bending journey."},
-    {"The Last Satellite", "Sci-Fi", "Thoughtful", 128, "An engineer searches for a lost signal beyond Earth."},
-    {"Neon Run", "Sci-Fi", "Exciting", 83, "A courier races across a futuristic city."},
-    {"Summer Market", "Comedy", "Relaxed", 89, "Neighbours come together to rescue a local market."},
-    {"The Accidental Chef", "Comedy", "Exciting", 105, "A cooking contest becomes a series of surprises."},
-    {"Coffee and Clouds", "Comedy", "Relaxed", 118, "Old friends meet again in a tiny hillside cafe."},
-    {"Weekend Mix-Up", "Comedy", "Exciting", 78, "A switched suitcase changes a family's holiday."},
-    {"River Letters", "Drama", "Thoughtful", 94, "Letters reconnect two generations of a family."},
-    {"The Long Road Home", "Drama", "Thoughtful", 121, "A musician returns to the town she left behind."},
-    {"Crossing Paths", "Drama", "Relaxed", 87, "Two commuters find an unexpected friendship."},
-    {"Night Shift", "Drama", "Exciting", 109, "A hospital worker faces a difficult overnight choice."}
+// All tracks and artists are fictional; no music service or network is used.
+const std::vector<Track> catalogue = {
+    {"City Lanterns", "Mira Vale", "Pop", "Calm", 3, "Soft vocals for a quiet evening."},
+    {"Bright Avenue", "The North Lights", "Pop", "Energetic", 5, "A lively chorus built for a long drive."},
+    {"Letters in Rain", "Elio Park", "Pop", "Calm", 6, "An unhurried song about finding home."},
+    {"Daybreak Run", "Nova Finch", "Pop", "Energetic", 3, "A quick beat to start the morning."},
+    {"Blue Circuit", "Kite Sequence", "Electronic", "Calm", 3, "Gentle synthesisers and a steady pulse."},
+    {"Night Current", "Vela Static", "Electronic", "Energetic", 5, "Bright layers rise across the dance floor."},
+    {"Slow Orbit", "Rin Echo", "Electronic", "Calm", 6, "A spacious instrumental with patient textures."},
+    {"Pulse Arcade", "Luma Phase", "Electronic", "Energetic", 3, "Playful rhythms in a compact track."},
+    {"Paper Harbour", "June Rowan", "Acoustic", "Reflective", 3, "An intimate guitar song about old letters."},
+    {"Homeward Lines", "Ari Fern", "Acoustic", "Reflective", 5, "A winding folk story about a return journey."},
+    {"Quiet Crossing", "Nell Rivers", "Acoustic", "Calm", 3, "Warm strings accompany a peaceful walk."},
+    {"Storm Window", "Theo Lark", "Acoustic", "Energetic", 5, "Brisk strumming through a change of season."}
 };
 
-// Read the whole line so entries such as 1abc and 1.5 are rejected.
-int readChoice(const std::string& prompt, int minimum, int maximum) {
-    while (true) {
-        std::cout << prompt;
-        std::string line;
-        if (!std::getline(std::cin, line)) {
-            std::cout << "\nInput ended. Goodbye.\n";
-            std::exit(0);
-        }
-        std::istringstream input(line);
-        int choice = 0;
-        char extra = '\0';
-        if (input >> choice && !(input >> extra)
-            && choice >= minimum && choice <= maximum) {
-            return choice;
-        }
-        std::cout << "Please enter a whole number from " << minimum
-                  << " to " << maximum << ".\n";
-    }
-}
-
 int main() {
-    std::cout << "MOVIE DISCOVERY ASSISTANT\n"
-              << "A small rule-based demonstration inspired by online movie discovery.\n"
-              << "The titles below are fictional; no account or internet is needed.\n";
-    bool again = true;
-    while (again) {
-        std::cout << "\nGenre: 1 Sci-Fi  2 Comedy  3 Drama\n";
-        int genre = readChoice("Choose genre (1-3): ", 1, 3);
-        std::cout << "Mood: 1 Relaxed  2 Exciting  3 Thoughtful\n";
-        int mood = readChoice("Choose mood (1-3): ", 1, 3);
-        int length = readChoice("Length: 1 Up to 100 min  2 Over 100 min: ", 1, 2);
-        const std::string genres[] = {"Sci-Fi", "Comedy", "Drama"};
-        const std::string moods[] = {"Relaxed", "Exciting", "Thoughtful"};
-        // Genre is required; mood has priority over duration.
-        int bestScore = -1;
-        const Movie* best = nullptr;
-        for (const Movie& movie : catalogue) {
-            if (movie.genre != genres[genre - 1]) continue;
-            int score = 0;
-            if (movie.mood == moods[mood - 1]) score += 2;
-            if ((movie.minutes <= 100) == (length == 1)) score += 1;
-            // Equal scores keep the first title in catalogue order.
-            if (score > bestScore) {
-                best = &movie;
-                bestScore = score;
-            }
-        }
-        // Protect the output if a genre is removed from a future catalogue.
-        if (best == nullptr) {
-            std::cout << "No titles are available in this genre.\n";
-            again = readChoice("Find another? 1 Yes  2 No: ", 1, 2) == 1;
-            continue;
-        }
-        // Explain only preferences actually matched by the recommendation.
-        std::cout << "\nRecommendation: " << best->title << " (" << best->minutes << " min)\n"
-                  << best->description << "\n"
-                  << "Why: It matches your " << genres[genre - 1] << " choice";
-        if (best->mood == moods[mood - 1]) std::cout << ", " << moods[mood - 1] << " mood";
-        if ((best->minutes <= 100) == (length == 1)) std::cout << ", and length preference";
-        std::cout << ".\n";
-        again = readChoice("Find another? 1 Yes  2 No: ", 1, 2) == 1;
-    }
-    std::cout << "Thanks for exploring.\n";
+    std::cout << "MUSIC DISCOVERY ASSISTANT\n"
+              << "An offline, rule-based demonstration of digital music discovery.\n"
+              << "Every track and artist is fictional; no account or internet is needed.\n";
+
+    std::cout << "\nGenre: 1 Pop  2 Electronic  3 Acoustic\n";
+    std::cout << "Choose genre (1-3): ";
+    int genre = 1;
+    std::cin >> genre;
+
+    std::cout << "Mood: 1 Calm  2 Energetic  3 Reflective\n";
+    std::cout << "Choose mood (1-3): ";
+    int mood = 1;
+    std::cin >> mood;
+
+    std::cout << "Length: 1 Up to 4 min  2 Over 4 min: ";
+    int length = 1;
+    std::cin >> length;
+
+    std::cout << "\n[Design phase: inputs captured, scoring logic to be implemented]\n";
+    std::cout << "Selected genre: " << genre << ", mood: " << mood << ", length: " << length << "\n";
+    return 0;
 }
