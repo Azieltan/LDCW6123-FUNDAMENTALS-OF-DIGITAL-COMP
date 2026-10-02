@@ -1,73 +1,49 @@
-# Netflix Innovation Life Cycle and Movie Discovery Assistant
+# Spotify and Physical Music Clayton Model
 
 LDCW6123, Trimester 2620, Group 13. Group leader: Aziel Tan Zheng Chuan (261UC240LY).
 
-Part 1 examines Netflix DVD-by-mail and its competition with physical video rental stores using Christensen's disruptive innovation model. Part 2 is an offline C++17 movie discovery demonstration with a fictional catalogue. It uses transparent rules, rather than Netflix's proprietary recommendation algorithm.
+Part 1 is an A3 poster and report applying Clayton Christensen's model to Spotify streaming and CD listening. The graph uses delivered digital audio fidelity as one conceptual performance metric. The yellow CD path is close to level because its format is fixed; the green Spotify path begins with compressed streaming and reaches an available Premium lossless option in 2025. The red and purple dashed lines show demanding and less demanding listeners on this metric. A separate blue callout identifies on-demand access and discovery. The graph is not a revenue plot or measured fidelity series. Physical music persists, and a strict disruptive classification remains debatable.
 
-## Build and run
+The structure was checked side by side against `Clayton Disruptive Model Template (1).pptx`, `Claytons_Disruptive Model sample 1.pdf` and `TOPIC 6A (1).pdf` page 20 and explanation pages 25–27. The review is documented in `qa/GRAPH_SPEC.md` and `qa/side_by_side.png`. Superseded Netflix documents are retained under `legacy_netflix/` only as history; the root `docs/` contains the Spotify version.
 
-From this project directory, with a C++17 compiler installed:
+Part 2 is a self-contained **Music Discovery Assistant**. It demonstrates searchable digital-music discovery using 12 fictional tracks and artists. It does not connect to Spotify, use its API, access an account or claim to replicate its proprietary recommendations.
+
+## Compile and run
 
 ```sh
-g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o movie_assistant
-./movie_assistant
+g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o music_assistant
+./music_assistant
 ```
 
-On Windows with MinGW, use `-o movie_assistant.exe`, then run `movie_assistant.exe` in Command Prompt or `./movie_assistant.exe` in PowerShell.
+On Windows with MinGW, use `-o music_assistant.exe` and run that executable. The programme needs no Python or internet connection.
 
-Select genre (1-3), mood (1-3) and duration (1-2). The programme recommends a title, describes it, explains the actual matches, and offers another search. Whole-line validation rejects text, decimals, trailing letters, blank entries and out-of-range numbers. EOF exits cleanly.
+Choose genre (Pop, Electronic or Acoustic), mood (Calm, Energetic or Reflective), and track duration (up to 4 minutes or longer). A matching genre is required; matching mood adds two points and matching duration adds one. Equal scores retain the first track in catalogue order. The explanation lists only preferences that actually matched. Whole-line input validation rejects text, decimals, trailing letters, blank and out-of-range values. EOF exits cleanly, and a future catalogue lacking a genre receives a safe fallback.
 
-Genre is required. Mood adds two points, duration adds one point. Equal scores select the first title in catalogue order. No mood or duration match is guaranteed; the output explains only preferences actually matched. A missing genre in a future catalogue is handled without dereferencing a null pointer.
+## Reproduce evidence
 
-## Reproduce the tests
-
-Python 3 and a C++17 compiler are needed for automated tests; Python is not needed to run the programme itself.
+Python 3 and a C++17 compiler are needed for automated tests. Pillow is also needed for screenshot generation. On a POSIX terminal:
 
 ```sh
 sh test.sh
+python3 tools/build_evidence.py
 ```
 
-Or on Windows:
+The 35 black-box checks cover all 18 preference combinations, eight invalid inputs, four EOF points, repeat queries, whitespace, bounds, fallback and mood priority. `assets/test_results.csv` is written by the test script after real executions. Output transcripts and code/output captures are generated from the compiled programme, and Git history evidence is generated from the actual repository.
+
+## Rebuild the documents
+
+The builder needs the Codex primary Python runtime (or an environment with python-docx, reportlab, Pillow and pypdf), plus Poppler and LibreOffice for rendering and review. From the project directory:
 
 ```sh
-g++ -std=c++17 -Wall -Wextra -pedantic src/main.cpp -o movie_assistant.exe
-python tests/test_program.py movie_assistant.exe
+sh test.sh
+python3 tools/build_evidence.py
+python3 tools/build_documents.py
 ```
 
-There are 35 checks. `assets/test_results.csv` contains individual input, expected result, actual result and status. The test script rewrites the results when run. The demo transcript is `assets/program_output.txt`; the invalid-input example is `assets/invalid_output.txt`.
+To make the combined PDF after reviewing the rendered Word file, export `docs/LDCW6123_Spotify_Project.docx` to a temporary PDF with LibreOffice or Word, then run `python3 tools/finalize_report.py /absolute/path/to/that-export.pdf`. The helper replaces page 9 with the original A3 poster and checks the expected 21-page layout. Inspect all pages again after changes to declarations or links.
 
-## Restore and continue the actual Git history
+`docs/Spotify_Clayton_A3_Poster.pdf` is the standalone A3 poster. `docs/LDCW6123_Spotify_Project.docx` is the editable 21-page report with original assessment form, six blank personal declarations, contents, A3 poster and Part 2 evidence. `docs/LDCW6123_Spotify_Project.pdf` is the reviewed PDF. `docs/REFERENCES.md` and `PRESENTATION_SCRIPT.md` provide the references and suggested six-person script; the latter also has a PDF version. The active Spotify builder reuses tested coversheet and Word layout helpers from `legacy_netflix/tools/build_documents.py`; it does not call that archived Netflix poster or report builder.
 
-```sh
-git clone development_history.bundle Netflix_Project_work
-cd Netflix_Project_work
-git log --oneline --graph --all
-```
+The existing `.git` history deliberately retains earlier Netflix work. New revisions are committed honestly; previous commits are not evidence of student authorship. `development_history.bundle` can restore the Git repository with `git clone development_history.bundle Spotify_Project_work`. `docs/submission_details.json` preserves the group data and manual fields.
 
-The supplied history records AI-assisted preparation and revision. It is not evidence of student authorship. Each member should review the content, make genuine changes where needed, test them and commit their own real work. Do not rename previous commit authors or create misleading backdated commits. After changes, regenerate the report's Git log and evidence.
-
-```sh
-git add src/main.cpp
-git commit -m "Describe the actual change made"
-git log --oneline --graph --all > assets/git_history.txt
-git bundle create development_history.bundle --all
-```
-
-## Contents
-
-- `src/main.cpp`: the programme.
-- `tests/test_program.py` and `test.sh`: reproducible checks.
-- `assets/`: updated source, programme-output, Git and test evidence.
-- `docs/`: report, poster, cover/declarations, references, presentation and editable submission details.
-- `PRESENTATION_SCRIPT.md`: complete six-person recording script.
-- `AI_DISCLOSURE.txt`: assistance disclosure.
-- `SUBMISSION_CHECKLIST.md`: outstanding personal and upload actions.
-- `tools/`: reproducible document and evidence builders, when included.
-
-## Edit the report
-
-Edit `docs/LDCW6123_Netflix_Project.docx` to complete the class section, declarations and access links. Export the updated document to PDF and review every page and the contents page numbers. Keep the poster page in A3 landscape orientation.
-
-The Python builders require python-docx, Pillow, reportlab and pypdf; the evidence builder also needs a POSIX terminal and a compiled `build/movie_assistant`. `tools/build_documents.py` regenerates the documents from `docs/submission_details.json` and the content in `tools/content_data.py`. It overwrites generated files, so preserve any manual Word edits before running it. After rendering and checking the DOCX, `python tools/finalize_report.py /absolute/path/rendered-report.pdf` replaces the poster page with its vector original. This helper expects the reviewed 20-page layout; re-check pagination after adding declarations or attachments.
-
-The final PDF must contain a working OneDrive video link and a working source-code/Git-history link. Signatures, declarations of personal contribution, recording and Turnitin reports must be supplied by the group. See the checklist before submission.
+Before submission, confirm the class section, actual individual contributions and signatures, source/Git link, OneDrive recording link, Turnitin reports, and final PDF filename required by the tutor. See `SUBMISSION_CHECKLIST.md`. The group must personally review the academic claims and code.

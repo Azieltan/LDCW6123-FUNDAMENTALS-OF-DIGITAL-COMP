@@ -30,13 +30,15 @@ Christensen's model explains a competitive process. A new service can begin outs
 
 In this project, the incumbent is the physical video-rental store. The entrant is Netflix's online DVD-by-mail service. The market being examined is home video rental, rather than the whole entertainment industry.
 
-The performance indicator on our vertical axis is immediacy of film access. Higher on the graph means a customer can begin watching sooner. Time, with historical years, is shown on the horizontal axis. The lines are a conceptual comparison. They are not measured performance scores or market-share data.
+The performance indicator on our vertical axis is convenience of film access. Here, convenience means less waiting and effort to obtain a film. Historical years appear on the horizontal axis. The arrows form a conceptual comparison, without measured performance scores or market-share data.
 
 The established store service offered same-day pickup if a title was available. Netflix's early postal service involved waiting. Its offer could still appeal to people who accepted the delay in exchange for home ordering and access to a broad catalogue. People outside convenient store locations were another relevant customer group.
 
-The lower position on the graph therefore describes weaker performance on immediacy. It does not mean that early Netflix customers were less knowledgeable about films or had lower incomes. Some could value catalogue choice very highly.
+The yellow arrow represents the established store-rental trajectory. The green arrow represents Netflix's emerging trajectory. The blue callout identifies the new competitive path based on home ordering and postal delivery. Netflix later added streaming. The two dashed lines show customer-demand levels, rather than company performance.
 
-Netflix's later delivery improvements and streaming service reduced the access disadvantage. That change helps explain how its offer could become more relevant to mainstream customers. We still need to consider catalogue availability and internet access, so the graph does not claim that streaming was better for everyone in every situation.
+The high-end label identifies mainstream customers seeking immediate access. The low-end label identifies customers willing to wait, including those outside convenient store locations. These labels concern demand for immediate access. We make no claim about their income or film knowledge.
+
+Netflix's delivery improvements and streaming reduced the waiting disadvantage and supported wider appeal. The slopes and crossings are illustrative. They do not identify an exact takeover date. Catalogue availability and internet access still affected the viewing experience.
 
 The main interpretation is that the delivery system and business model changed together. Soo Kian Rong will now explain the evidence behind the timeline.
 
