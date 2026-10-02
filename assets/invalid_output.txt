@@ -1,19 +1,19 @@
-MOVIE DISCOVERY ASSISTANT
-A small rule-based demonstration inspired by online movie discovery.
-The titles below are fictional; no account or internet is needed.
+MUSIC DISCOVERY ASSISTANT
+An offline, rule-based demonstration of digital music discovery.
+Every track and artist is fictional; no account or internet is needed.
 
-Genre: 1 Sci-Fi  2 Comedy  3 Drama
+Genre: 1 Pop  2 Electronic  3 Acoustic
 Choose genre (1-3): 1abc
 Please enter a whole number from 1 to 3.
 Choose genre (1-3): 1.5
 Please enter a whole number from 1 to 3.
 Choose genre (1-3): 1
-Mood: 1 Relaxed  2 Exciting  3 Thoughtful
+Mood: 1 Calm  2 Energetic  3 Reflective
 Choose mood (1-3): 3
-Length: 1 Up to 100 min  2 Over 100 min: 1
+Length: 1 Up to 4 min  2 Over 4 min: 1
 
-Recommendation: Orbit Station (96 min)
-A crew solves a mystery aboard a research station.
-Why: It matches your Sci-Fi choice, Thoughtful mood, and length preference.
+Recommendation: City Lanterns by Mira Vale (3 min)
+Soft vocals for a quiet evening.
+Why: It matches your Pop choice, and length preference.
 Find another? 1 Yes  2 No: 2
 Thanks for exploring.

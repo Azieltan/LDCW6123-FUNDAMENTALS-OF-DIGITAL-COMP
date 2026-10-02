@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 root=Path(__file__).resolve().parents[1]
 assets=root/'assets'
-exe=root/'build/movie_assistant'
+exe=root/'build/music_assistant'
 
 def session(steps):
     master,slave=pty.openpty()
@@ -31,7 +31,7 @@ def session(steps):
     assert child.wait(timeout=2)==0
     return data.replace('\r\n','\n').replace('\r','')
 
-prompts=['Choose genre (1-3): ','Choose mood (1-3): ', 'Length: 1 Up to 100 min  2 Over 100 min: ','Find another? 1 Yes  2 No: ']
+prompts=['Choose genre (1-3): ','Choose mood (1-3): ', 'Length: 1 Up to 4 min  2 Over 4 min: ','Find another? 1 Yes  2 No: ']
 demo=session(list(zip(prompts,['2','1','2','1']))+list(zip(prompts,['1','3','1','2'])))
 invalid=session([(prompts[0],'1abc'),(prompts[0],'1.5')]+list(zip(prompts,['1','3','1','2'])))
 assets.joinpath('program_output.txt').write_text(demo)
@@ -52,10 +52,11 @@ start=next(i for i,x in enumerate(source) if x.startswith('int readChoice'))
 end=next(i for i,x in enumerate(source[start:],start) if x.startswith('int main'))
 picture('\n'.join(f'{i+1:3}  {source[i]}' for i in range(start,end-1)), 'code_capture.png')
 start=next(i for i,x in enumerate(source) if 'int bestScore' in x)
-end=next(i for i,x in enumerate(source) if 'Explain only preferences' in x)
+end=next(i for i,x in enumerate(source) if 'std::cout << "\\nRecommendation:' in x)
 picture('\n'.join(f'{i+1:3}  {source[i]}' for i in range(start,end)), 'logic_capture.png')
 picture(demo,'output_capture.png')
 picture(invalid,'invalid_capture.png')
+picture(invalid.split('Mood:')[0],'invalid_validation.png')
 
 log=subprocess.check_output(['git','log','--oneline','--graph','--all'],cwd=root,text=True)
 detail=subprocess.check_output(['git','log','--format=%h %an <%ae> %aI %s','--reverse'],cwd=root,text=True)
