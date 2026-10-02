@@ -47,7 +47,37 @@ int main() {
     int length = 1;
     std::cin >> length;
 
-    std::cout << "\n[Design phase: inputs captured, scoring logic to be implemented]\n";
-    std::cout << "Selected genre: " << genre << ", mood: " << mood << ", length: " << length << "\n";
+    const std::string genres[] = {"Pop", "Electronic", "Acoustic"};
+    const std::string moods[] = {"Calm", "Energetic", "Reflective"};
+
+    // A matching genre is required; mood outranks the length preference.
+    int bestScore = -1;
+    const Track* best = nullptr;
+    for (const Track& track : catalogue) {
+        if (track.genre != genres[genre - 1]) continue;
+        int score = 0;
+        if (track.mood == moods[mood - 1]) score += 2;
+        if ((track.minutes <= 4) == (length == 1)) score += 1;
+        // On equal scores retain the first track in catalogue order.
+        if (score > bestScore) {
+            best = &track;
+            bestScore = score;
+        }
+    }
+
+    if (best == nullptr) {
+        std::cout << "No tracks are available in this genre.\n";
+        return 0;
+    }
+
+    std::cout << "\nRecommendation: " << best->title << " by " << best->artist
+              << " (" << best->minutes << " min)\n"
+              << best->description << "\n"
+              << "Why: It matches your " << genres[genre - 1] << " choice";
+    if (best->mood == moods[mood - 1]) std::cout << ", " << moods[mood - 1] << " mood";
+    if ((best->minutes <= 4) == (length == 1)) std::cout << ", and length preference";
+    std::cout << ".\n";
+
+    std::cout << "Thanks for exploring.\n";
     return 0;
 }
