@@ -1,22 +1,22 @@
 Case,Input,Expected,Actual,Status
-C01,"1, 1, 1; exit 2",Orbit Station,Orbit Station,PASS
-C02,"1, 1, 2; exit 2",Tomorrow's Signal,Tomorrow's Signal,PASS
-C03,"1, 2, 1; exit 2",Neon Run,Neon Run,PASS
-C04,"1, 2, 2; exit 2",Tomorrow's Signal,Tomorrow's Signal,PASS
-C05,"1, 3, 1; exit 2",Orbit Station,Orbit Station,PASS
-C06,"1, 3, 2; exit 2",The Last Satellite,The Last Satellite,PASS
-C07,"2, 1, 1; exit 2",Summer Market,Summer Market,PASS
-C08,"2, 1, 2; exit 2",Coffee and Clouds,Coffee and Clouds,PASS
-C09,"2, 2, 1; exit 2",Weekend Mix-Up,Weekend Mix-Up,PASS
-C10,"2, 2, 2; exit 2",The Accidental Chef,The Accidental Chef,PASS
-C11,"2, 3, 1; exit 2",Summer Market,Summer Market,PASS
-C12,"2, 3, 2; exit 2",The Accidental Chef,The Accidental Chef,PASS
-C13,"3, 1, 1; exit 2",Crossing Paths,Crossing Paths,PASS
-C14,"3, 1, 2; exit 2",Crossing Paths,Crossing Paths,PASS
-C15,"3, 2, 1; exit 2",Night Shift,Night Shift,PASS
-C16,"3, 2, 2; exit 2",Night Shift,Night Shift,PASS
-C17,"3, 3, 1; exit 2",River Letters,River Letters,PASS
-C18,"3, 3, 2; exit 2",The Long Road Home,The Long Road Home,PASS
+C01,"1, 1, 1; exit 2",City Lanterns,City Lanterns,PASS
+C02,"1, 1, 2; exit 2",Letters in Rain,Letters in Rain,PASS
+C03,"1, 2, 1; exit 2",Daybreak Run,Daybreak Run,PASS
+C04,"1, 2, 2; exit 2",Bright Avenue,Bright Avenue,PASS
+C05,"1, 3, 1; exit 2",City Lanterns,City Lanterns,PASS
+C06,"1, 3, 2; exit 2",Bright Avenue,Bright Avenue,PASS
+C07,"2, 1, 1; exit 2",Blue Circuit,Blue Circuit,PASS
+C08,"2, 1, 2; exit 2",Slow Orbit,Slow Orbit,PASS
+C09,"2, 2, 1; exit 2",Pulse Arcade,Pulse Arcade,PASS
+C10,"2, 2, 2; exit 2",Night Current,Night Current,PASS
+C11,"2, 3, 1; exit 2",Blue Circuit,Blue Circuit,PASS
+C12,"2, 3, 2; exit 2",Night Current,Night Current,PASS
+C13,"3, 1, 1; exit 2",Quiet Crossing,Quiet Crossing,PASS
+C14,"3, 1, 2; exit 2",Quiet Crossing,Quiet Crossing,PASS
+C15,"3, 2, 1; exit 2",Storm Window,Storm Window,PASS
+C16,"3, 2, 2; exit 2",Storm Window,Storm Window,PASS
+C17,"3, 3, 1; exit 2",Paper Harbour,Paper Harbour,PASS
+C18,"3, 3, 2; exit 2",Homeward Lines,Homeward Lines,PASS
 I01,"'wrong'; then 1,3,1,2",Reject and recover,Rejected and recovered,PASS
 I02,"'0'; then 1,3,1,2",Reject and recover,Rejected and recovered,PASS
 I03,"'4'; then 1,3,1,2",Reject and recover,Rejected and recovered,PASS
@@ -30,7 +30,7 @@ E02,'1\n',Clean EOF exit,Clean EOF exit,PASS
 E03,'1\n3\n',Clean EOF exit,Clean EOF exit,PASS
 E04,'1\n3\n1\n',Clean EOF exit,Clean EOF exit,PASS
 R01,"2,1,2,1; 1,2,1,2",Two recommendations and normal exit,Two recommendations and normal exit,PASS
-W01,"spaces around 1; then 3,1,2",Accept surrounding spaces,Orbit Station,PASS
+W01,"spaces around 1; then 3,1,2",Accept surrounding spaces,City Lanterns,PASS
 B01,invalid length 3 and repeat 7,Reject at both menus and recover,Rejected at both menus,PASS
-F01,"Sci-Fi, Relaxed, short",Fallback does not claim a mood match,"It matches your Sci-Fi choice, and length preference.",PASS
-P01,"Drama, Exciting, short",Mood priority; no false length claim,"It matches your Drama choice, Exciting mood.",PASS
+F01,"Pop, Reflective, short",Fallback does not claim a mood match,"It matches your Pop choice, and length preference.",PASS
+P01,"Acoustic, Energetic, short",Mood priority; no false length claim,"It matches your Acoustic choice, Energetic mood.",PASS
